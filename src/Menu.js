@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { menuData } from "./MenuData";
-import "./index.css";
+import "./styles/index.css";
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState(menuData[0].category);
@@ -13,10 +13,10 @@ const Menu = () => {
       {/* Bouton pour ouvrir ou télécharger le PDF */}
       <div className="menu-pdf-section">
         <a
-          href="/PORTEMENU_CICCIOLINA.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="menu-pdf-button"
+      href={`${process.env.PUBLIC_URL}/PORTEMENU_CICCIOLINA.pdf`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="menu-pdf-button"
         >
           Voir la Carte Complète (PDF)
         </a>

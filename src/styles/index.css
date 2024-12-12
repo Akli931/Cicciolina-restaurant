@@ -210,7 +210,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/public/pizzaa.png'); /* Image de fond */
+  background-image: url('/src/images/pizzaa.png'); /* Image de fond */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -365,7 +365,7 @@ footer a:hover {
   justify-content: center;
   padding: 20px;
   min-height: 100vh;
-  background: url("/public/poto.png") center/cover no-repeat;
+  background: url("/src/images/poto.png") center/cover no-repeat;
 }
 
 /* --- Conteneur Principal de la Page Réservation avec effet flou sur toute la page --- */
@@ -376,7 +376,7 @@ footer a:hover {
   justify-content: center;
   padding: 20px;
   min-height: 100vh;
-  background: url("/public/reservation.png") center/cover no-repeat;
+  background: url("/src/images/reservation.png") center/cover no-repeat;
   position: relative; /* Nécessaire pour le pseudo-élément */
   overflow: hidden;
 }
@@ -526,7 +526,7 @@ button:hover {
   max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
-  background-image: url('/public/reservation.png'); /* Chemin vers ton image */
+  background-image: url('/src/images/reservation.png'); /* Chemin vers ton image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -683,7 +683,7 @@ button:hover {
   max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
-  background-image: url('/public/poto.png'); /* Fond */
+  background-image: url('/src/images/poto.png'); /* Fond */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

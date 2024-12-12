@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./index.css";
+import logo from "./images/logo3.png"; // Chemin relatif vers le logo
+import "./styles/index.css"; // Chemin relatif vers le fichier CSS
 
 const NavigationBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Effet pour ajouter la classe 'scrolled' lors du défilement
   useEffect(() => {
     const handleScroll = () => {
       const header = document.querySelector("header");
@@ -21,13 +23,12 @@ const NavigationBar = () => {
 
   return (
     <header className="navigation-bar">
-      {/* Logo amélioré */}
+      {/* Logo */}
       <div className="nav-logo">
-  <Link to="/">
-    <img src="/logo3.png" alt="Cicciolina Logo" className="logo-img" />
-  </Link>
-</div>
-
+        <Link to="/">
+          <img src={logo} alt="Cicciolina Logo" className="logo-img" />
+        </Link>
+      </div>
 
       {/* Menu burger pour mobile */}
       <div
@@ -47,7 +48,7 @@ const NavigationBar = () => {
         <Link to="/reservations" className="nav-link" onClick={() => setMenuOpen(false)}>
           Réservation
         </Link>
-        <a href="tel:+33123456789" className="nav-button" onClick={() => setMenuOpen(false)}>
+        <a href="tel:+33751510600" className="nav-button" onClick={() => setMenuOpen(false)}>
           07 51 51 06 00
         </a>
       </nav>
@@ -56,3 +57,4 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
+

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./styles/index.css"; // Chemin relatif vers le fichier CSS
 
 const Home = () => {
   const navigate = useNavigate();
