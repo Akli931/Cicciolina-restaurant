@@ -72,6 +72,7 @@ body {
 @media (max-width: 768px) {
   .logo-img {
     width: 140px; /* Étirement léger pour les petits écrans */
+    height: 140px;
   }
   .nav-logo {
     margin-left: -15px; /* Décalage léger vers la gauche */
