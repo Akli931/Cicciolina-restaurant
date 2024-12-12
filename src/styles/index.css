@@ -71,21 +71,21 @@ body {
 /* --- Responsive pour petits écrans (mobiles) --- */
 @media (max-width: 768px) {
   .logo-img {
-    width: 120px; /* Taille pour petits écrans */
+    width: 140px; /* Étirement léger pour les petits écrans */
   }
   .nav-logo {
-    margin-left: 0; /* Pas de décalage pour mobiles */
+    margin-left: -15px; /* Décalage léger vers la gauche */
     margin-top: 10px; /* Ajustement vertical */
   }
 }
 
 @media (max-width: 576px) {
   .logo-img {
-    width: 100px; /* Taille pour très petits écrans */
+    width: 130px; /* Étirement supplémentaire pour très petits écrans */
   }
   .nav-logo {
-    margin-left: 0; /* Centrage parfait */
-    margin-top: 5px; /* Ajustement minime */
+    margin-left: -20px; /* Décalage plus important vers la gauche */
+    margin-top: 5px; /* Alignement vertical ajusté */
   }
 }
 
