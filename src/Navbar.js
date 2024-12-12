@@ -23,12 +23,13 @@ const NavigationBar = () => {
 
   return (
     <header className="navigation-bar">
-      {/* Logo */}
+      {/* Logo qui redirige vers la page d'accueil */}
       <div className="nav-logo">
-      <img src={logo} alt="Cicciolina Logo" className="logo-img" />
-  <span className="logo-text">Cicciolina</span>
-</div>
-
+        <Link to="/" onClick={() => setMenuOpen(false)}>
+          <img src={logo} alt="Cicciolina Logo" className="logo-img" />
+          <span className="logo-text">Cicciolina</span>
+        </Link>
+      </div>
 
       {/* Menu burger pour mobile */}
       <div
@@ -45,10 +46,18 @@ const NavigationBar = () => {
         <Link to="/menu" className="nav-link" onClick={() => setMenuOpen(false)}>
           Carte
         </Link>
-        <Link to="/reservations" className="nav-link" onClick={() => setMenuOpen(false)}>
+        <Link
+          to="/reservations"
+          className="nav-link"
+          onClick={() => setMenuOpen(false)}
+        >
           Réservation
         </Link>
-        <a href="tel:+33751510600" className="nav-button" onClick={() => setMenuOpen(false)}>
+        <a
+          href="tel:+33751510600"
+          className="nav-button"
+          onClick={() => setMenuOpen(false)}
+        >
           07 51 51 06 00
         </a>
       </nav>
@@ -57,4 +66,3 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
-
