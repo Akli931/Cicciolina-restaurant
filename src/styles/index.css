@@ -88,6 +88,10 @@ body {
 }
 
 @media (max-width: 576px) {
+  
+  .logo-img {
+    display: none; /* Cache le logo */
+  }
   .logo-text {
     font-size: 1.2rem; /* Taille du texte ajustée pour très petits écrans */
   }
