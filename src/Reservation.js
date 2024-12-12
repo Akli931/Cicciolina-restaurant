@@ -9,14 +9,17 @@ const Reservations = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Date minimale pour empêcher les dates passées
-  const today = new Date().toISOString().slice(0, 16);
+  // Fonction pour obtenir la date actuelle en format UTC (ISO)
+  const today = new Date();
+  const minDate = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+    .toISOString()
+    .slice(0, 16);
 
-  // Fonction pour valider l'heure (entre 8h et 23h)
+  // Validation des heures (entre 8h et 23h)
   const validateTime = (dateTime) => {
     const selectedTime = new Date(dateTime);
     const hours = selectedTime.getHours();
-    return hours >= 8 && hours < 23; // Heure valide entre 8h00 et 23h00
+    return hours >= 8 && hours < 23;
   };
 
   const handleReservation = (e) => {
@@ -37,13 +40,18 @@ const Reservations = () => {
       return;
     }
 
-    // Validation de l'heure
+    // Validation de la date et de l'heure
+    if (new Date(date) < new Date(minDate)) {
+      alert("La date de réservation ne peut pas être antérieure à aujourd'hui.");
+      return;
+    }
+
     if (!validateTime(date)) {
       alert("Les réservations sont possibles uniquement entre 8h00 et 23h00.");
       return;
     }
 
-    setIsSubmitting(true); // Désactive le bouton
+    setIsSubmitting(true); // Désactive le bouton pour empêcher plusieurs envois
 
     const templateParams = {
       to_name: "Propriétaire du restaurant",
@@ -64,7 +72,7 @@ const Reservations = () => {
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
           setSuccessMessage("Votre réservation a bien été envoyée !");
-          setIsSubmitting(false); // Réactive le bouton
+          setIsSubmitting(false);
           setName("");
           setPhone("");
           setGuests("");
@@ -83,7 +91,6 @@ const Reservations = () => {
       <div className="reservation-box">
         <h1>Réservez votre table</h1>
         <form onSubmit={handleReservation}>
-          {/* Nom */}
           <div className="form-group">
             <label>Nom :</label>
             <input
@@ -94,8 +101,6 @@ const Reservations = () => {
               required
             />
           </div>
-
-          {/* Téléphone */}
           <div className="form-group">
             <label>Téléphone :</label>
             <input
@@ -106,8 +111,6 @@ const Reservations = () => {
               required
             />
           </div>
-
-          {/* Nombre de personnes */}
           <div className="form-group">
             <label>Nombre de personnes :</label>
             <input
@@ -119,29 +122,23 @@ const Reservations = () => {
               required
             />
           </div>
-
-          {/* Date et heure */}
           <div className="form-group">
             <label>Date et heure :</label>
             <input
               type="datetime-local"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              min={today} // Empêche de choisir une date passée
+              min={minDate} // Empêche la sélection de dates antérieures
               required
             />
             <small style={{ color: "gray" }}>
               Les réservations sont possibles entre 8h00 et 23h00.
             </small>
           </div>
-
-          {/* Bouton de réservation */}
           <button type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Envoi en cours..." : "Réserver"}
           </button>
         </form>
-
-        {/* Message de succès */}
         {successMessage && <p className="success-message">{successMessage}</p>}
       </div>
     </div>
