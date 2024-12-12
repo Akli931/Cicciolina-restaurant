@@ -57,6 +57,15 @@ body {
   transform: scale(1.1); /* Effet au survol */
 }
 
+/* Texte "Cicciolina" caché par défaut */
+.logo-text {
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d4af37;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
 /* --- Responsive pour écrans moyens (tablettes) --- */
 @media (max-width: 992px) {
   .logo-img {
@@ -68,29 +77,21 @@ body {
   }
 }
 
-/* --- Responsive pour petits écrans (mobiles) --- */
 @media (max-width: 768px) {
   .logo-img {
-    width: 140px; /* Étirement léger pour les petits écrans */
-    height: 140px;
+    display: none; /* Cache le logo */
   }
-  .nav-logo {
-    margin-left: -15px; /* Décalage léger vers la gauche */
-    margin-top: 10px; /* Ajustement vertical */
+
+  .logo-text {
+    display: block; /* Affiche le texte Cicciolina */
   }
 }
 
 @media (max-width: 576px) {
-  .logo-img {
-    width: 130px;
-    height: 130px; /* Étirement supplémentaire pour très petits écrans */
-  }
-  .nav-logo {
-    margin-left: -20px; /* Décalage plus important vers la gauche */
-    margin-top: 5px; /* Alignement vertical ajusté */
+  .logo-text {
+    font-size: 1.2rem; /* Taille du texte ajustée pour très petits écrans */
   }
 }
-
 
 /* --- Liens de navigation --- */
 .nav-links {

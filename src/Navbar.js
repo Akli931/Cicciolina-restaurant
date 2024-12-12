@@ -25,10 +25,10 @@ const NavigationBar = () => {
     <header className="navigation-bar">
       {/* Logo */}
       <div className="nav-logo">
-        <Link to="/">
-          <img src={logo} alt="Cicciolina Logo" className="logo-img" />
-        </Link>
-      </div>
+      <img src={logo} alt="Cicciolina Logo" className="logo-img" />
+  <span className="logo-text">Cicciolina</span>
+</div>
+
 
       {/* Menu burger pour mobile */}
       <div
