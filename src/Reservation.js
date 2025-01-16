@@ -5,6 +5,7 @@ const Reservations = () => {
     <div className="reservation-container">
       <div className="reservation-box">
         <h1>Réservez chez Cicciolina</h1>
+        <h3>avec privateaser (site de réservation)</h3>
         <a
           href="https://prvt.re/koxiOL"
           target="_blank"

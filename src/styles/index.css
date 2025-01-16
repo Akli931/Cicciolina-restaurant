@@ -300,8 +300,23 @@ body {
   background-image: url('/src/images/pizzaa.png'); /* Image en arrière-plan */
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Effet Parallax */
   z-index: 0;
+}
+
+/* --- Ajustements pour les écrans de taille moyenne (tablettes) --- */
+@media (max-width: 768px) {
+  .home-container {
+    height: 80vh; /* Réduit la hauteur */
+    background-attachment: scroll; /* Désactive Parallax pour mobile */
+  }
+}
+
+/* --- Ajustements pour les petits écrans (téléphones) --- */
+@media (max-width: 480px) {
+  .home-container {
+    background-position: top; /* Réajuste la position */
+    background-size: contain; /* Assure que l'image n'est pas coupée */
+  }
 }
 
 .home-container::before {

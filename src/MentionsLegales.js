@@ -9,11 +9,11 @@ const MentionsLegales = () => {
       <h2>Éditeur du site</h2>
       <p>
         Le site <strong>Cicciolina</strong> est édité par : <br />
-        <strong>[Nom de ton ami]</strong> <br />
+        <strong>MANSOUR Yuba</strong> <br />
         Adresse : 21 Rue Pierre Lescot, 75001 Paris <br />
         Téléphone : 09 74 64 10 86 <br />
-        Adresse e-mail : contact@cicciolina.fr <br />
-        SIRET : [numéro SIRET du restaurant] <br />
+        Adresse e-mail : occio75001@gmail.fr <br />
+        SIRET : 91898762900014 <br />
         RCS : Paris
       </p>
 
@@ -52,7 +52,7 @@ const MentionsLegales = () => {
       <h2>Contact</h2>
       <p>
         Pour toute question ou réclamation, veuillez nous contacter : <br />
-        E-mail : contact@cicciolina.fr <br />
+        E-mail : occio75001@gmail.fr <br />
         Téléphone : 09 74 64 10 86
       </p>
     </div>
