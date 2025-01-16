@@ -58,7 +58,7 @@ const NavigationBar = () => {
           className="nav-button"
           onClick={() => setMenuOpen(false)}
         >
-          07 51 51 06 00
+          09 74 64 10 86
         </a>
       </nav>
     </header>

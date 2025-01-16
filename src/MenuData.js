@@ -2,20 +2,22 @@ export const menuData = [
   {
     category: "Entrées",
     items: [
-      { name: "Arancini à la truffe", description: "Croquettes de riz à la truffe", price: "12€" },
-      { name: "Burrata", description: "Burrata des Pouilles, tomates cerises", price: "14€" },
-      { name: "Carpaccio Bresaola", description: "Roquette, parmesan", price: "15€" },
-      { name: "Bruschetta Chèvre Miel", description: "Pain grillé, chèvre et miel", price: "12€" },
-      { name: "Escargots (6/12 pcs)", description: "Servis avec beurre persillé", price: "12€ / 19€" },
+      { name: "Arancini All truffe", price: "12€" },
+      { name: "Burrata", description: "Burrata des Pouilles, tomates cerises", price: "8€" },
+      { name: "Burrata All Truffe", description: "Farcie à la crème de truffe", price: "12€" },
+      { name: "PROSCIUTTO", description: "Jambon de Parme AOP 24 mois"},
+      { name: "Carpaccio Bresaola", description: "Roquette, parmesan", price: "11€" },
+      { name: "Bruschetta", description: "Pain grillé, chèvre et miel", price: "8€" },
+      { name: "Escargots (6/12 pcs)", description: "Chèvre Miel", price: "12€ / 19€" },
     ],
   },
   {
     category: "Salades",
     items: [
-      { name: "César", description: "Salade, poulet, pancetta, sauce César, fromage italien", price: "16€" },
-      { name: "Saumon", description: "Saumon, mozzarella, tomates cerises, roquette, sauce balsamique", price: "18€" },
+      { name: "César", description: "Salade, poulet, pancetta, sauce César, fromage italien", price: "14,5€" },
+      { name: "Saumon", description: "Saumon, mozzarella, tomates cerises, roquette, sauce balsamique", price: "16€" },
       { name: "Insalata Italiana", description: "Roquette, thon, poivrons grillés, croûtons focaccia", price: "15€" },
-      { name: "Salade Pollo", description: "Salade, poulet, tomates cerises, croûtons focaccia, fromage", price: "16€" },
+      { name: "Salade Pollo", description: "Salade, poulet, tomates cerises, croûtons focaccia, fromage", price: "15€" },
     ],
   },
   {
@@ -23,45 +25,57 @@ export const menuData = [
     items: [
       {
         name: "Margherita",
-        description: "Sauce tomate, mozzarella, basilic",
+        description: "Sauce tomate, mozzarella, basilic, origan",
         price: "11€",
       },
       {
         name: "Calzone Regina",
-        description: "Jambon, champignons, mozzarella",
-        price: "15€",
-      },
-      {
-        name: "Quatre Fromages",
-        description: "Crème, mozzarella, gorgonzola, fromage italien",
-        price: "15€",
-      },
-      {
-        name: "Diavola",
-        description: "Sauce tomate, mozzarella, salami piquant, origan",
+        description: "Sauce tomate, mozzarella, jambon, champignons",
         price: "14€",
       },
       {
-        name: "Tartufo",
-        description: "Crème de truffe, jambon de Parme, huile de truffe",
-        price: "20€",
+
+      name: "Regina",
+      description: "Sauce tomate, mozzarella, champignons,jambon, origan",
+      price: "15€",
+
       },
       {
-        name: "Capricciosa",
-        description:
-          "Sauce tomate, jambon, champignons, artichauts, olives noires, mozzarella",
+        name: "Spéciale",
+        description: "Sauce tomate, mozzarella, jambon, œuf, origan",
+        price: "15€",
+      },
+
+      {
+        name: "Mama",
+        description: "Sauce tomate, mozzarella, champignons, œuf, sauce persillade, origan",
+        price: "15€",
+      },
+
+      {
+        name: "VESUVIO",
+        description: "Sauce tomate, mozzarella, merguez, poivrons, spianata, œuf, origan",
+        price: "16€",
+      },
+
+
+
+      {
+        name: "Tarttufo",
+        description: "Crème de truffe, mozzarella, champignons, jambon de parme, huile de truffe ",
+        price: "16€",
+      },
+
+      {
+        name: "Napolitaine",
+        description: "Crème de truffe, mozzarella, champignons,jambon de parme, huile de truffe ",
         price: "16€",
       },
       {
-        name: "Napolitaine",
-        description: "Sauce tomate, anchois, câpres, olives, mozzarella",
-        price: "13€",
-      },
-      {
-        name: "Parma",
+        name: "Pizza Bébé",
         description:
-          "Sauce tomate, mozzarella, jambon de Parme, roquette, parmesan",
-        price: "18€",
+          " Sauce tomate, mozzarella, basilic, origan",
+        price: "8€",
       },
     ],
   },
@@ -69,49 +83,53 @@ export const menuData = [
     category: "Pâtes",
     items: [
       {
-        name: "Tagliatelle al Tartufo",
-        description: "Tagliatelles à la crème de truffe et champignons",
-        price: "18€",
-      },
-      {
-        name: "Spaghetti alla Carbonara",
-        description: "Spaghetti, pancetta, œuf, poivre noir, pecorino",
+        name: "CARBONARA",
+        description: "crème fraîche, spaghetti, pancetta, jaune d'œuf, poivre noir",
         price: "15€",
       },
       {
-        name: "Lasagne alla Bolognese",
-        description: "Lasagne gratinée à la mozzarella avec sauce bolognaise",
+        name: "PASTA POLLO E PESTO",
+        description: "crème Pesto vert, spaghetti, émincés de poulet, fromage italien râpé, tomates cerises",
         price: "16€",
       },
       {
-        name: "Penne all'Arrabbiata",
-        description: "Sauce tomate épicée, ail, basilic",
+        name: "PASTA ALLA BOLOGNESE",
+        description: "spaghetti, sauce bolognese, feuille de basilic",
         price: "14€",
       },
       {
-        name: "Spaghetti Frutti di Mare",
-        description: "Spaghetti aux fruits de mer frais (moules, crevettes, calamars)",
+        name: "PASTA POMODORO",
+        description: "sauce tomate, spaghetti, tomates cerise, huile d'olive,fromage italien râpé parmesan",
+        price: "14€",
+      },
+      {
+        name: "PASTA À LA TRUFFE",
+        description: " crème à la truffe, champignons de Paris, spaghetti, huile d'olive aromatisé à la truffe, fromage italien râpé parmesan ",
         price: "19€",
       },
       {
-        name: "Gnocchi al Gorgonzola",
-        description: "Gnocchis à la crème de gorgonzola et noix",
-        price: "17€",
+        name: "GIRASOLI AL SALMONE",
+        description: "Pâtes farcies au saumon fumé, crème citronnée, saumon fumé",
+        price: "18€",
       },
       {
-        name: "Penne al Salmone",
-        description: "Penne à la crème, saumon fumé et aneth",
-        price: "18€",
+        name: "SAUMON ALLA TOSCAN",
+        description: "Pavé de saumon mariné, linguine, tomates cerises, pousses d'épinard",
+        price: "19€",
       },
     ],
   },
   {
     category: "Desserts",
     items: [
-      { name: "Tiramisu", description: "Classique au café et mascarpone", price: "8€" },
-      { name: "Crème Brûlée", description: "Vanille avec croûte caramélisée", price: "7€" },
-      { name: "Fondant au Chocolat", description: "Cœur coulant au chocolat noir", price: "8€" },
-      { name: "Panna Cotta", description: "Coulis de fruits rouges", price: "7€" },
+      { name: "Tiramisu", price: "7€" },
+      { name: "Crème Brûlée", price: "7€" },
+      { name: "Fondant au Chocolat", price: "7€" },
+      { name: "Pana Cotta", price: "7€" },
+      { name: "Tarte du jour", price: "7€"},
+      { name: "Brioche Perdue", price: "8€"},
+      { name: "Pizza Nutella", price: "8€"}
+
     ],
   },
   {

@@ -97,6 +97,53 @@ body {
   }
 }
 
+/* --- Barre de navigation principale --- */
+.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #063121;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navigation-bar.scrolled {
+  background-color: rgba(1, 50, 32, 0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Logo dans la barre de navigation --- */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  margin-left: -30px;
+}
+
+.logo-img {
+  width: 160px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+.logo-text {
+  display: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d4af37;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
 /* --- Liens de navigation --- */
 .nav-links {
   display: flex;
@@ -194,111 +241,121 @@ body {
   text-align: center;
 }
 
+/* --- Responsive pour tablettes --- */
+@media (max-width: 992px) {
+  .logo-img {
+    width: 140px;
+  }
+  .nav-logo {
+    margin-left: -20px;
+  }
+}
+
+/* --- Responsive pour mobiles --- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Cache les liens sur mobile */
+  }
+
+  .navbar-toggle {
+    display: flex; /* Affiche le menu burger */
+  }
+
+  .nav-button {
+    display: none; /* Cache le bouton d'appel sur mobile */
+  }
+
+  .logo-img {
+    display: none; /* Cache le logo image */
+  }
+
+  .logo-text {
+    display: block; /* Affiche le texte Cicciolina */
+  }
+}
+
+/* --- Responsive pour très petits écrans --- */
+@media (max-width: 576px) {
+  .logo-text {
+    font-size: 1.2rem; /* Ajuste la taille du texte pour petits écrans */
+  }
+}
+
+.nav-links.active .nav-link {
+  padding: 10px;
+  text-align: center;
+}
+
 /* --- Section d'accueil --- */
 .home-container {
-  position: relative; /* Pour que le pseudo-élément s'aligne correctement */
+  position: relative;
   width: 100vw;
   height: 100vh;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: #ffffff;
-  overflow: hidden; /* Assure que le flou ne dépasse pas */
+  overflow: hidden;
+  background-image: url('/src/images/pizzaa.png'); /* Image en arrière-plan */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Effet Parallax */
+  z-index: 0;
 }
 
 .home-container::before {
-  content: ""; /* Obligatoire pour le pseudo-élément */
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/src/images/pizzaa.png'); /* Image de fond */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(5px); /* Applique un léger flou */
-  z-index: -1; /* Place le flou derrière le contenu */
-  opacity: 0.9; /* Réduit*/
-}
-
-
-/* --- Boîte de contenu avec effet moderne --- */
-.home-content {
   background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.7) 10%,
-    rgba(0, 0, 0, 0.5) 90%
-  ); /* Dégradé léger */
-  backdrop-filter: blur(10px); /* Flou d'arrière-plan */
-  -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */
-  padding: 50px; /* Espace interne */
+    to bottom,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.3)
+  ); /* Dégradé pour une meilleure lisibilité */
+  z-index: -1;
+}
+
+.home-content {
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
   border-radius: 15px; /* Coins arrondis */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ombre */
-  max-width: 600px;
-  width: 90%; /* Meilleure responsivité */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure légère */
-  animation: fadeIn 1s ease-in-out; /* Animation d'apparition */
-  color: #ffffff; /* Couleur du texte */
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out; /* Apparition fluide */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre légère */
 }
 
-/* --- Effet pour le titre principal --- */
 .home-content h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 3.5rem;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #d4af37; /* Couleur or élégante */
   margin-bottom: 20px;
-  color: #d4af37; /* Or */
-  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  animation: slideInDown 1s ease-in-out; /* Animation d'entrée */
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ombre du texte */
 }
 
-/* --- Effet pour le texte de description --- */
 .home-content p {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-bottom: 30px;
-  line-height: 1.6;
+  line-height: 1.8;
   color: #f5f5f5;
 }
 
-/* --- Animation pour l'apparition --- */
-@keyframes slideInDown {
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* --- Animation FadeIn --- */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-
+/* --- Bouton Réserver --- */
 .reserve-button {
   background-color: #d4af37;
   color: #063121;
-  padding: 15px 30px;
-  font-size: 1.2rem;
+  padding: 15px 40px;
+  font-size: 1.4rem;
   font-weight: bold;
-  border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .reserve-button:hover {
@@ -306,22 +363,142 @@ body {
   transform: scale(1.1);
 }
 
-/* --- Section Google Maps --- */
+/* --- Transition fluide entre les sections --- */
+.section-transition {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  background-color: #013220; /* Couleur de la transition */
+}
+
+.section-transition svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+/* --- Section avec Style.png corrigée --- */
+/* --- Section avec image floutée --- */
+.style-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    background-image: url('/src/images/style.png'); /* Image en arrière-plan */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Effet Parallax */
+    z-index: 0;
+  }
+
+
+.style-container .overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.3)
+  ); /* Dégradé pour une meilleure lisibilité */
+  z-index: -1;
+}
+
+/* --- Box pour le texte et le bouton --- */
+.style-text-box {
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  border-radius: 15px; /* Coins arrondis */
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 3s ease-in-out; /* Apparition fluide */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre légère */
+}
+
+.style-text-box h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #d4af37; /* Couleur or élégante */
+  margin-bottom: 20px;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Ombre du texte */
+}
+
+.style-text-box p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  color: #f5f5f5;
+}
+
+.style-text-box .cta-button {
+  background-color: #d4af37;
+  color: #013220;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.style-text-box .cta-button:hover {
+  background-color: #b8842a;
+  transform: scale(1.05);
+}
+
+/* --- Transition fluide entre sections --- */
+.section-transition {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background-color: #013220; /* Couleur de transition */
+}
+
+.section-transition svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+/* --- Map Container --- */
 .map-container {
-  margin: 40px auto;
-  border-radius: 10px;
+  position: relative;
+  width: 100vw;
+  height: 400px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 1200px;
-  height: 400px;
+  margin: 40px 0;
 }
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 
 /* --- Pied de page --- */
 footer {
   background-color: #063121;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   padding: 20px;
+  font-size: 1rem;
 }
 
 footer a {
@@ -334,37 +511,78 @@ footer a:hover {
   color: #b8842a;
 }
 
-/* --- Responsive pour mobile --- */
+/* --- Animations --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- Responsiveness pour mobile --- */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .navbar-toggle {
-    display: flex;
-  }
-
   .home-content h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .home-content p {
     font-size: 1.2rem;
   }
+
+  .reserve-button {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+  }
+
+  .style-container h2 {
+    font-size: 2.5rem;
+  }
+
+  .style-container p {
+    font-size: 1.2rem;
+  }
+
+  .image-gallery img {
+    width: 150px;
+    height: 150px;
+  }
 }
 
 @media (max-width: 480px) {
-  .nav-logo img {
-    height: 50px;
+  .home-content h1 {
+    font-size: 2.5rem;
   }
 
-  .home-content {
-    padding: 30px;
+  .home-content p {
+    font-size: 1rem;
+  }
+
+  .reserve-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+
+  .style-container h2 {
+    font-size: 2rem;
+  }
+
+  .style-container p {
+    font-size: 1rem;
+  }
+
+  .image-gallery img {
+    width: 100px;
+    height: 100px;
   }
 }
 
 
 /* --- Conteneur Principal de la Page Réservation --- */
+/* --- Conteneur Principal avec effet esthétique --- */
 .reservation-container {
   display: flex;
   flex-direction: column;
@@ -372,107 +590,77 @@ footer a:hover {
   justify-content: center;
   padding: 20px;
   min-height: 100vh;
-  background: url("/src/images/poto.png") center/cover no-repeat;
-}
-
-/* --- Conteneur Principal de la Page Réservation avec effet flou sur toute la page --- */
-.reservation-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  min-height: 100vh;
-  background: url("/src/images/reservation.png") center/cover no-repeat;
-  position: relative; /* Nécessaire pour le pseudo-élément */
+  background: url("/src/images/exterieur.png") center/cover no-repeat;
+  position: relative;
   overflow: hidden;
 }
 
-/* --- Arrière-plan flou couvrant toute la page --- */
+/* --- Arrière-plan flou esthétique --- */
 .reservation-container::before {
   content: "";
-  position: fixed; /* Assure la couverture de toute la page */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Assombrissement */
-  backdrop-filter: blur(2px); /* Flou appliqué à l'arrière-plan */
-  z-index: 0; /* Place en arrière-plan */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(0.2px);
+  z-index: -1;
 }
 
-/* --- Formulaire et contenu en avant-plan --- */
-.reservation-container > * {
-  position: relative;
-  z-index: 1; /* Place le formulaire au-dessus de l'effet de flou */
-}
-
-/* --- Boîte autour du formulaire --- */
+/* --- Contenu en avant-plan --- */
 .reservation-box {
-  background-color: rgba(255, 255, 255, 0.7);
-  /* Fond légèrement opaque */
-  border-radius: 12px; /* Coins arrondis */
-  padding: 30px; /* Espace intérieur */
-  max-width: 500px; /* Largeur maximale */
-  width: 100%; /* Adaptabilité */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre légère */
-  text-align: left; /* Alignement du texte */
-  animation: fadeIn 1s ease-in-out; /* Animation d'apparition */
+  position: relative;
+  z-index: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* --- Titres du Formulaire --- */
+/* --- Titres élégants --- */
 .reservation-box h1 {
-  text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #013220; /* Couleur principale */
+  color: #011d01;
 }
 
-/* --- Champs et Étiquettes du Formulaire --- */
-.reservation-box label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.reservation-box input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s ease;
-}
-
-.reservation-box input:focus {
-  border-color: #d4af37;
-  outline: none;
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
-}
-
-/* --- Bouton Réserver --- */
-.reservation-box button {
-  width: 100%;
-  padding: 12px;
+/* --- Liens de réservation --- */
+.reservation-link {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 15px 20px;
   background-color: #013220;
-  color: #ffffff;
+  color: white;
   font-size: 1.2rem;
   font-weight: bold;
-  border: none;
   border-radius: 8px;
-  cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.reservation-box button:hover {
+.reservation-link:hover {
   background-color: #0a5c36;
   transform: scale(1.05);
 }
 
-/* --- Animation FadeIn --- */
+/* --- Numéro de contact --- */
+.contact-info {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #1a1919;
+}
+
+.contact-info span {
+  font-weight: bold;
+  color: #013220;
+}
+
+/* --- Animation fadeIn --- */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -484,60 +672,21 @@ footer a:hover {
   }
 }
 
-.form-group {
-  margin-bottom: 15px;
-  width: 100%;
-  max-width: 400px;
-}
+/* ------------------------------------------------------------------------*/
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
 
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  padding: 12px 20px;
-  background-color: #013220;
-  color: #ffffff;
-  font-size: 1.1em;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0a5c36;
-}
-
-.success-message {
-  margin-top: 15px;
-  color: green;
-  font-weight: bold;
-}
-/* --- Styles pour la page Menu améliorée --- */
-
-/* Conteneur principal */
+/* --- Conteneur principal --- */
 .menu-container {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
-  background-image: url('/src/images/reservation.png'); /* Chemin vers ton image */
+  background-image: url("/src/images/exterieur.png"); /* Image de fond */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #ffffff;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Ombre intérieure */
   position: relative;
   overflow: hidden;
 }
@@ -549,26 +698,26 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px); /* Ajoute un effet de flou */
+  background: rgba(0, 0, 0, 0.1); /* Couche sombre */
+  backdrop-filter: blur(1px); /* Effet de flou */
   z-index: 0;
 }
 
 .menu-container > * {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* Apporte les enfants au-dessus de la couche sombre */
 }
 
-/* Titre principal */
+/* --- Titre principal --- */
 .menu-title {
   text-align: center;
-  color: #D4AF37;
+  color: #d4af37;
   font-size: 3rem;
   margin-bottom: 40px;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Ombre portée */
 }
 
-/* Navigation des catégories */
+/* --- Navigation des catégories --- */
 .menu-categories {
   display: flex;
   justify-content: center;
@@ -591,29 +740,29 @@ button:hover {
 }
 
 .menu-category-button.active {
-  background: linear-gradient(to right, #D4AF37, #b8842a);
+  background: linear-gradient(to right, #d4af37, #b8842a);
   color: #013220;
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(212, 175, 55, 0.4);
 }
 
 .menu-category-button:hover {
-  background: #D4AF37;
+  background: #d4af37;
   color: #013220;
   transform: translateY(-3px);
 }
 
-/* Liste des plats */
+/* --- Liste des plats --- */
 .menu-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille adaptable */
   gap: 30px;
   margin-top: 20px;
   animation: fadeIn 1s ease-in-out;
 }
 
 .menu-item {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.85); /* Fond légèrement transparent */
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -642,11 +791,11 @@ button:hover {
 .menu-item-price {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #D4AF37;
+  color: #d4af37;
   text-align: right;
 }
 
-/* Animation pour l'apparition des plats */
+/* --- Animation pour l'apparition des plats --- */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -658,8 +807,7 @@ button:hover {
   }
 }
 
-
-/* --- Section pour le PDF --- */
+/* --- Section PDF --- */
 .menu-pdf-section {
   text-align: center;
   margin-bottom: 20px;
@@ -683,18 +831,73 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* --- Conteneur principal amélioré --- */
-.menu-container {
-  font-family: "Cormorant Garamond", serif;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  min-height: 100vh;
-  background-image: url('/src/images/poto.png'); /* Fond */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+/* --- Responsive pour petits écrans --- */
+@media (max-width: 768px) {
+  .menu-title {
+    font-size: 2.5rem;
+  }
+
+  .menu-category-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .menu-item {
+    padding: 15px;
+  }
+
+  .menu-item-name {
+    font-size: 1.2rem;
+  }
+
+  .menu-item-description {
+    font-size: 0.9rem;
+  }
+
+  .menu-item-price {
+    font-size: 1rem;
+  }
 }
 
-/* Autres styles restent inchangés */
+.mentions-container {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  color: #333;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  color: #013220;
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #d4af37;
+  margin-top: 30px;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .mentions-container {
+    padding: 20px;
+  }
+}

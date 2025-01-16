@@ -3,6 +3,7 @@ import NavigationBar from "./Navbar";
 import Home from "./Home";
 import Menu from "./Menu";
 import Reservations from "./Reservation";
+import MentionsLegales from "./MentionsLegales";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservations" element={<Reservations />} />
+          <Route path="/Mentionslegales" element={<MentionsLegales />} />
           {/* Redirection par défaut */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

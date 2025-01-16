@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { menuData } from "./MenuData";
 import "./styles/index.css";
 
+
+
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState(menuData[0].category);
 
