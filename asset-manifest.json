@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Cicciolina-restaurant/static/css/main.e989f29c.css",
-    "main.js": "/Cicciolina-restaurant/static/js/main.b0f8346a.js",
+    "main.css": "/Cicciolina-restaurant/static/css/main.599343f2.css",
+    "main.js": "/Cicciolina-restaurant/static/js/main.d74e36fc.js",
     "static/js/453.b1d6eeb8.chunk.js": "/Cicciolina-restaurant/static/js/453.b1d6eeb8.chunk.js",
     "static/media/exterieur.png": "/Cicciolina-restaurant/static/media/exterieur.c83db26950a9119cbaeb.png",
     "static/media/pizzaa.png": "/Cicciolina-restaurant/static/media/pizzaa.1f352b99f568d3be2fb2.png",
     "static/media/style.png": "/Cicciolina-restaurant/static/media/style.773cf9d8fbfebc365352.png",
     "static/media/logo3.png": "/Cicciolina-restaurant/static/media/logo3.06695cb05aa461aa226e.png",
     "index.html": "/Cicciolina-restaurant/index.html",
-    "main.e989f29c.css.map": "/Cicciolina-restaurant/static/css/main.e989f29c.css.map",
-    "main.b0f8346a.js.map": "/Cicciolina-restaurant/static/js/main.b0f8346a.js.map",
+    "main.599343f2.css.map": "/Cicciolina-restaurant/static/css/main.599343f2.css.map",
+    "main.d74e36fc.js.map": "/Cicciolina-restaurant/static/js/main.d74e36fc.js.map",
     "453.b1d6eeb8.chunk.js.map": "/Cicciolina-restaurant/static/js/453.b1d6eeb8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e989f29c.css",
-    "static/js/main.b0f8346a.js"
+    "static/css/main.599343f2.css",
+    "static/js/main.d74e36fc.js"
   ]
 }
